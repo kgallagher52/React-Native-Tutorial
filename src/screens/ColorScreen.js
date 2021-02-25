@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { ScrollView, StyleSheet, View, Button, FlatList } from 'react-native'
+import { StyleSheet, View, Button, FlatList } from 'react-native'
 
 const ColorScreen = () => {
     const [colors, setColors] = useState([]);
