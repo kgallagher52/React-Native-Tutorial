@@ -1,13 +1,24 @@
-import React, { useState } from 'react'
+import React, { useReducer } from 'react'
 import { StyleSheet, View, Text, Button } from 'react-native'
 
-const ColorCounter = ({ color, onIncrease, onDecrease }) => {
-    const [count, setCount] = useState(0);
+const reducer = (state, action) => {
+    switch (action.type) {
+        case 'add':
+            return { ...state, count: action.payload + count }
+        case 'subtract':
+            return { ...state, count: action.payload - count }
+        default:
+            return state;
+    }
+}
+
+const ColorCounter = ({ color }) => {
+    const [state, dispatch] = useReducer(reducer, { count: 0 });
     return (
         <View style={styles.container}>
             <Text style={styles.text}>{color}</Text>
-            <Button title={`Increase ${color}`} onPress={() => onIncrease()} />
-            <Button title={`Decrease ${color}`} onPress={() => onDecrease()} />
+            <Button title={`Increase ${color}`} onPress={() => dispatch({ type: 'add', payload: 1 })} />
+            <Button title={`Decrease ${color}`} onPress={() => dispatch({ type: 'subtract', payload: 1 })} />
         </View>
     )
 }
