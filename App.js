@@ -8,6 +8,10 @@ import CounterScreen from './src/screens/CounterScreen';
 import ColorScreen from './src/screens/ColorScreen';
 import SquareScreen from './src/screens/Components/SquareScreen';
 import TextInputScreen from './src/screens/Components/TextInputScreen';
+import BoxScreen from './src/screens/Components/WorkingWithLayouts/BoxScreen';
+import FlexScreen from './src/screens/Components/WorkingWithLayouts/FlexScreen';
+import PositionScreen from './src/screens/Components/WorkingWithLayouts/PositionScreen';
+import AllLayouts from './src/screens/Components/WorkingWithLayouts/AllLayouts';
 
 const navigator = createStackNavigator(
   {
@@ -19,6 +23,10 @@ const navigator = createStackNavigator(
     Color: ColorScreen,
     ColorComplex: SquareScreen,
     TextInputScreen: TextInputScreen,
+    BoxScreen: BoxScreen,
+    FlexScreen: FlexScreen,
+    PositionScreen: PositionScreen,
+    AllLayouts: AllLayouts,
   },
   {
     initialRouteName: 'Home',
