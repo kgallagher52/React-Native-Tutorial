@@ -28,6 +28,10 @@ const HomeScreen = ({ navigation }) => {
         title="Go to Square Screen"
         onPress={() => navigation.navigate('ColorComplex')}
       />
+      <Button
+        title="Go to Enter Name Screen"
+        onPress={() => navigation.navigate('EnterName')}
+      />
     </View>
   );
 };
